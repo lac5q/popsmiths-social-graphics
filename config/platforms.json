@@ -1,0 +1,49 @@
+{
+  "instagram": {
+    "portrait": { "width": 1080, "height": 1350, "ratio": "4:5" },
+    "square": { "width": 1080, "height": 1080, "ratio": "1:1" },
+    "story": { "width": 1080, "height": 1920, "ratio": "9:16" },
+    "default_format": "portrait",
+    "staging_style": "lifestyle",
+    "gemini_resolution": "2K",
+    "logo_position": "bottom_right",
+    "logo_size_pct": 0.12,
+    "url_badge": true,
+    "publisher": "zapier_mcp",
+    "max_caption_chars": 2200,
+    "max_hashtags": 30,
+    "qa_required": true,
+    "marketing_qa_signoff": true
+  },
+  "pinterest": {
+    "standard": { "width": 1000, "height": 1500, "ratio": "2:3" },
+    "default_format": "standard",
+    "staging_style": "lifestyle",
+    "gemini_resolution": "2K",
+    "logo_position": "bottom_center",
+    "logo_size_pct": 0.14,
+    "url_badge": true,
+    "publisher": "csv_upload",
+    "max_caption_chars": 500,
+    "max_hashtags": 20,
+    "qa_required": true,
+    "marketing_qa_signoff": true,
+    "board": "PopSmiths Art Prints"
+  },
+  "x": {
+    "landscape": { "width": 1200, "height": 675, "ratio": "16:9" },
+    "square": { "width": 1200, "height": 1200, "ratio": "1:1" },
+    "default_format": "landscape",
+    "staging_style": "graphic",
+    "gemini_resolution": "1K",
+    "logo_position": "top_left",
+    "logo_size_pct": 0.10,
+    "url_badge": true,
+    "publisher": "xurl_cli",
+    "max_caption_chars": 280,
+    "max_hashtags": 3,
+    "qa_required": true,
+    "marketing_qa_signoff": false,
+    "note": "X uses graphic/text-driven treatment; art used as reference, slightly looser staging OK"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "brand": "PopSmiths",
+  "website": "popsmiths.com",
+  "instagram_handle": "@popsmiths",
+  "pinterest_board": "PopSmiths Art Prints",
+  "colors": {
+    "primary_purple": "#7C3AED",
+    "accent_pink": "#EC4899",
+    "white": "#FFFFFF",
+    "black": "#111827",
+    "light_gray": "#F3F4F6"
+  },
+  "logos": {
+    "circular": "/Users/lcalderon/github/mkt-brands/popsmiths_brand/assets/logos/PopSmithsCircularLogo.png",
+    "horizontal": "/Users/lcalderon/github/mkt-brands/popsmiths_brand/assets/logos/PopSmiths0218desktoplogov6.png",
+    "horizontal_alt": "/Users/lcalderon/github/mkt-brands/popsmiths_brand/assets/logos/logo.png"
+  },
+  "samples_dir": "/Users/lcalderon/github/popsmiths_app/public/samples",
+  "forbidden_words": [
+    "AI", "A.I.", "artificial intelligence",
+    "prompt", "generated", "generate",
+    "easy", "simple", "upload",
+    "discover", "algorithm",
+    "machine learning", "deep learning"
+  ],
+  "required_framing": [
+    "Gallery-quality",
+    "Statement piece",
+    "uniquely yours",
+    "We did the hard work",
+    "Instant Art"
+  ],
+  "brand_voice": {
+    "tone": "fun, nostalgic, premium, warm",
+    "personality": "stovetop popcorn meets gallery-quality art — cozy, celebratory, family-forward",
+    "always_include": "popsmiths.com",
+    "never_mention": ["AI", "prompt", "generate", "easy", "simple", "upload", "discover"]
+  },
+  "hashtags": {
+    "core": ["#PopSmiths", "#PopSmithsArt", "#ArtPrints", "#WallArt", "#GalleryWall"],
+    "lifestyle": ["#CozyHome", "#HomeDecor", "#ArtForHome", "#UniqueGifts", "#PersonalizedArt"],
+    "product_specific": {
+      "canvas": ["#CanvasArt", "#CanvasPrint", "#WallArtCanvas"],
+      "mug": ["#ArtMug", "#CoffeeMug", "#MorningVibes"],
+      "blanket": ["#CozyBlanket", "#ThrowBlanket", "#HomeComfort"],
+      "pillow": ["#ThrowPillow", "#HomeDecorPillow", "#ArtPillow"],
+      "tshirt": ["#ArtTee", "#GraphicTee", "#WearableArt"],
+      "prints": ["#ArtPrint", "#PrintableArt", "#FineArtPrint"],
+      "puzzle": ["#ArtPuzzle", "#JigsawPuzzle", "#FunActivity"]
+    }
+  },
+  "styles": [
+    "abstract_color_field",
+    "art_deco_geometric",
+    "block_print_folk",
+    "celestial_map",
+    "chinoiserie",
+    "coastal_seascape",
+    "comic_halftone",
+    "continuous_line_pop",
+    "duotone_split",
+    "gilded_baroque",
+    "holographic",
+    "liquid_chrome",
+    "moody_botanical",
+    "single_accent_minimalist",
+    "terrazzo_organic",
+    "vintage_travel_poster",
+    "wabi_sabi"
+  ],
+  "products": [
+    "blanket", "canvas", "framed", "greetingcard",
+    "hoodie", "iphone", "kidshoodie", "kidstshirt",
+    "laptopsleeve", "mousepad", "mug", "ornament",
+    "pillow", "prints", "puzzle", "samsung",
+    "socks", "sticker", "sweatshirt", "tanktop",
+    "totebag", "tshirt", "waterbottle"
+  ]
+}
