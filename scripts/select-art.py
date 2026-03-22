@@ -18,7 +18,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-GALLERY_ROOT = Path("/Users/lcalderon/github/popsmiths_app/public/samples")
+GALLERY_ROOT = Path("/root/github/popsmiths-art-app/public/style-previews/v3")
 
 MIN_FILE_BYTES = 5000
 
