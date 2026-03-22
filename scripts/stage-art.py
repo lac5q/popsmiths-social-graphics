@@ -1,4 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "google-genai>=1.0.0",
+#     "pillow>=10.0.0",
+# ]
+# ///
 """
 stage-art.py — Stage a PopSmiths art sample into a lifestyle/marketing scene.
 

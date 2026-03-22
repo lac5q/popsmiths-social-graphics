@@ -83,7 +83,7 @@ SELECT_ARGS=()
 [[ -n "$STYLE" ]] && SELECT_ARGS+=(--style "$STYLE")
 [[ -n "$PRODUCT" ]] && SELECT_ARGS+=(--product "$PRODUCT")
 
-ART_JSON=$(python3 "$SCRIPT_DIR/select-art.py" --output-json "${SELECT_ARGS[@]}")
+ART_JSON=$(uv run "$SCRIPT_DIR/select-art.py" --output-json "${SELECT_ARGS[@]}")
 echo "$ART_JSON" > "$OUTPUT_DIR/art-selection.json"
 
 ART_PATH=$(echo "$ART_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)['art_path'])")
@@ -110,7 +110,7 @@ STAGE_ARGS=(
 )
 [[ -n "$VIBE" ]] && STAGE_ARGS+=(--vibe "$VIBE")
 
-python3 "$SCRIPT_DIR/stage-art.py" "${STAGE_ARGS[@]}"
+uv run "$SCRIPT_DIR/stage-art.py" "${STAGE_ARGS[@]}"
 
 if [[ ! -f "$STAGED_IMAGE" ]]; then
   echo "ERROR: Staging failed — no output image produced." >&2
@@ -153,7 +153,7 @@ CAPTION_ARGS=(
 )
 [[ -n "$VIBE" ]] && CAPTION_ARGS+=(--vibe "$VIBE")
 
-python3 "$SCRIPT_DIR/generate-caption.py" "${CAPTION_ARGS[@]}"
+uv run "$SCRIPT_DIR/generate-caption.py" "${CAPTION_ARGS[@]}"
 
 CAPTION_FILE="$OUTPUT_DIR/caption.txt"
 HASHTAGS_FILE="$OUTPUT_DIR/hashtags.txt"
@@ -177,7 +177,7 @@ QA_ARGS=(
 )
 
 set +e
-python3 "$SCRIPT_DIR/qa-check.py" "${QA_ARGS[@]}"
+uv run "$SCRIPT_DIR/qa-check.py" "${QA_ARGS[@]}"
 QA_EXIT=$?
 set -e
 
@@ -199,6 +199,9 @@ CAPTION_CONTENT=$(cat "$CAPTION_FILE")
 HASHTAGS_CONTENT=""
 [[ -f "$HASHTAGS_FILE" ]] && HASHTAGS_CONTENT=$(cat "$HASHTAGS_FILE")
 
+QA_PASSED_BOOL=$([ $QA_EXIT -eq 0 ] && echo "True" || echo "False")
+READY_BOOL=$([ "$SKIP_POST" == "false" ] && [ $QA_EXIT -eq 0 ] && echo "True" || echo "False")
+
 python3 - <<PYEOF
 import json
 meta = {
@@ -215,8 +218,8 @@ meta = {
     "hashtags_file": "$HASHTAGS_FILE",
     "output_dir": "$OUTPUT_DIR",
     "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-    "qa_passed": $([ $QA_EXIT -eq 0 ] && echo "true" || echo "false"),
-    "ready_to_post": $([ "$SKIP_POST" == "false" ] && [ $QA_EXIT -eq 0 ] && echo "true" || echo "false")
+    "qa_passed": $QA_PASSED_BOOL,
+    "ready_to_post": $READY_BOOL,
 }
 with open("$OUTPUT_DIR/post-meta.json", "w") as f:
     json.dump(meta, f, indent=2)

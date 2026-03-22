@@ -1,4 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "anthropic>=0.20.0",
+# ]
+# ///
 """
 generate-caption.py — Generate a brand-voice caption + hashtags for a PopSmiths social post.
 
